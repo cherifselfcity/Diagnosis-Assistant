@@ -681,5 +681,44 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="0ffa9883-a2b4-8061-9c38-d14d11e3a7b2" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/playback-fast-forward_blue.svg"/></div><h1 class="page-title">🪠🚽 Engorgement WC</h1><p class="page-description"></p></header><div class="page-body"><p id="118b122a-510f-402b-9dad-c55ae5b6c9fe" class="">
+</style></head><body><article id="0ffa9883-a2b4-8061-9c38-d14d11e3a7b2" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/playback-fast-forward_blue.svg"/></div><h1 class="page-title">🪠🚽 Engorgement WC</h1><p class="page-description"></p></header><div class="page-body"><p id="118b122a-510f-402b-9dad-c55ae5b6c9fe" class=""><script>
+        // Wait for the DOM to fully load
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the current URL
+            const url = window.location.href;
+            
+            // Create a URLSearchParams object from the current URL
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // Access specific parameters
+            const paramCc = urlParams.get('cc'); // Replace 'name' with your parameter key
+            const paramMissionId = urlParams.get('missionId'); // Replace 'age' with your parameter key
+
+            // Example: display these parameters
+            console.log("cc:", paramCc);
+            console.log("missionId:", paramMissionId);
+
+
+            function addParams(url, params) {
+                let newUrl = new URL(url, window.location.origin);
+                for (const key in params) {
+                    newUrl.searchParams.set(key, params[key]);
+                }
+                return newUrl;
+            }
+
+            // Parameters to add
+            const paramsToAdd = { 'missionId': paramMissionId, 'cc': paramCc };
+
+            // Select all anchor tags
+            const links = document.querySelectorAll('a');
+
+            // Iterate through each link and modify its href attribute
+            links.forEach(link => {
+                link.href = addParams(link.href, paramsToAdd);
+            });
+
+        });
+    </script>
+
 </p><h3 id="609efea2-77c1-45c1-828a-e5be1b0800c8" class=""><mark class="highlight-blue_background">Votre WC possède-t-il un sanibroyeur  ?</mark></h3><p id="485c347e-0621-4803-ab1d-fd5a8e7a17c2" class=""><div class="indented"><h3 id="6f15b4bb-19bd-43b7-a36a-23918082acac" class=""><mark class="highlight-teal_background">Oui</mark></h3><figure id="0ffa9883-a2b4-800e-bf79-e1b167e6355f" class="link-to-page"><a href="%F0%9F%AA%A0%F0%9F%9A%BD%20Engorgement%20WC%200ffa9883a2b480619c38d14d11e3a7b2/%F0%9F%AA%A0%F0%9F%9A%BD%E2%9A%99%EF%B8%8F%20Engorgement%20WC%20sanibroyeur%200ffa9883a2b4800ebf79e1b167e6355f.html"><img class="icon" src="https://www.notion.so/icons/playback-fast-forward_blue.svg"/>🪠🚽⚙️ Engorgement WC sanibroyeur</a></figure></div></p><p id="100a9883-a2b4-80e1-b954-f524b2aa02f5" class=""><div class="indented"><h3 id="100a9883-a2b4-80e2-b67d-ec1b753a6740" class=""><mark class="highlight-teal_background">Non</mark></h3><figure id="eae20111-80e1-4215-8f0b-f618866dc6b5" class="link-to-page"><a href="../%F0%9F%9A%BD%F0%9F%AA%A0%20De%CC%81bouchage%20WC%20classique%20eae2011180e142158f0bf618866dc6b5.html">🚽🪠 Débouchage WC classique</a></figure></div></p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

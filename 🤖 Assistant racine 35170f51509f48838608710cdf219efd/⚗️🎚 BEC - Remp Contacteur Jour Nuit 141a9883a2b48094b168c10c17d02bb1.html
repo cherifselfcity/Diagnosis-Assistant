@@ -681,7 +681,46 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="141a9883-a2b4-8094-b168-c10c17d02bb1" class="page sans"><header><h1 class="page-title">⚗️🎚 BEC - Remp. Contacteur Jour/Nuit</h1><p class="page-description"></p></header><div class="page-body"><p id="cbaf1720-00a2-4912-b808-6942073a457c" class=""><mark class="highlight-gray"><mark class="highlight-gray_background">(Code F110)</mark></mark></p><h3 id="edb00652-3829-45f1-9314-a9c063d0f25b" class=""><mark class="highlight-blue"><mark class="highlight-blue_background"><strong>[ + </strong></mark></mark><mark class="highlight-blue"><mark class="highlight-blue_background"><a href="https://form.jotform.com/243215859972367">FORFAIT - BEC - Remp. Contacteur Jour/Nuit</a></mark></mark><mark class="highlight-blue"><mark class="highlight-blue_background"><strong> ]</strong></mark></mark></h3><p id="bc5e0b77-7341-489c-86e7-93f310a52ac0" class=""><mark class="highlight-default"><mark class="highlight-default_background"><strong>T1</strong></mark></mark><mark class="highlight-default"><mark class="highlight-default_background"> : 115€   -   </mark></mark><mark class="highlight-default"><mark class="highlight-default_background"><strong>T2</strong></mark></mark><mark class="highlight-default"><mark class="highlight-default_background"> : 140€   -   </mark></mark><mark class="highlight-default"><mark class="highlight-default_background"><strong>B1</strong></mark></mark><mark class="highlight-default"><mark class="highlight-default_background"> : 115€   -   </mark></mark><mark class="highlight-default"><mark class="highlight-default_background"><strong>B2</strong></mark></mark><mark class="highlight-default"><mark class="highlight-default_background"> : 140€</mark></mark></p><p id="ce3b8c6a-fcd7-48c3-ad60-f6a99fb2e872" class="">
+</style></head><body><article id="141a9883-a2b4-8094-b168-c10c17d02bb1" class="page sans"><header><h1 class="page-title">⚗️🎚 BEC - Remp. Contacteur Jour/Nuit</h1><p class="page-description"></p></header><div class="page-body"><p id="cbaf1720-00a2-4912-b808-6942073a457c" class=""><mark class="highlight-gray"><mark class="highlight-gray_background">(Code F110)</mark></mark></p><h3 id="edb00652-3829-45f1-9314-a9c063d0f25b" class=""><mark class="highlight-blue"><mark class="highlight-blue_background"><strong>[ + </strong></mark></mark><mark class="highlight-blue"><mark class="highlight-blue_background"><a href="https://form.jotform.com/243215859972367">FORFAIT - BEC - Remp. Contacteur Jour/Nuit</a></mark></mark><mark class="highlight-blue"><mark class="highlight-blue_background"><strong> ]</strong></mark></mark></h3><p id="bc5e0b77-7341-489c-86e7-93f310a52ac0" class=""><mark class="highlight-default"><mark class="highlight-default_background"><strong>T1</strong></mark></mark><mark class="highlight-default"><mark class="highlight-default_background"> : 115€   -   </mark></mark><mark class="highlight-default"><mark class="highlight-default_background"><strong>T2</strong></mark></mark><mark class="highlight-default"><mark class="highlight-default_background"> : 140€   -   </mark></mark><mark class="highlight-default"><mark class="highlight-default_background"><strong>B1</strong></mark></mark><mark class="highlight-default"><mark class="highlight-default_background"> : 115€   -   </mark></mark><mark class="highlight-default"><mark class="highlight-default_background"><strong>B2</strong></mark></mark><mark class="highlight-default"><mark class="highlight-default_background"> : 140€</mark></mark></p><p id="ce3b8c6a-fcd7-48c3-ad60-f6a99fb2e872" class=""><script>
+        // Wait for the DOM to fully load
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the current URL
+            const url = window.location.href;
+            
+            // Create a URLSearchParams object from the current URL
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // Access specific parameters
+            const paramCc = urlParams.get('cc'); // Replace 'name' with your parameter key
+            const paramMissionId = urlParams.get('missionId'); // Replace 'age' with your parameter key
+
+            // Example: display these parameters
+            console.log("cc:", paramCc);
+            console.log("missionId:", paramMissionId);
+
+
+            function addParams(url, params) {
+                let newUrl = new URL(url, window.location.origin);
+                for (const key in params) {
+                    newUrl.searchParams.set(key, params[key]);
+                }
+                return newUrl;
+            }
+
+            // Parameters to add
+            const paramsToAdd = { 'missionId': paramMissionId, 'cc': paramCc };
+
+            // Select all anchor tags
+            const links = document.querySelectorAll('a');
+
+            // Iterate through each link and modify its href attribute
+            links.forEach(link => {
+                link.href = addParams(link.href, paramsToAdd);
+            });
+
+        });
+    </script>
+
 </p><p id="5d386ae9-203f-4d44-8c3d-5e8dd1f0dfbb" class="">
 </p><p id="5eeaa76a-a758-43f4-bef6-3dcfbc46a362" class="">
 </p><p id="87cb8404-86fc-4141-aa55-4bb2d3c7f061" class="">

@@ -681,7 +681,46 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="141a9883-a2b4-80f5-bad5-fe0bb6af3951" class="page sans"><header><h1 class="page-title">⚗️🛡 BEC - Remp. Groupe de Sécurité</h1><p class="page-description"></p></header><div class="page-body"><p id="141a9883-a2b4-8183-8fd6-c9e7e6c1d8ef" class=""><mark class="highlight-gray"><mark class="highlight-gray_background">(Code F100)</mark></mark></p><h3 id="141a9883-a2b4-8170-a518-dff210a4c726" class=""><mark class="highlight-blue"><mark class="highlight-blue_background"><strong>[ + </strong></mark></mark><mark class="highlight-blue"><mark class="highlight-blue_background"><a href="https://form.jotform.com/243215741862355">FORFAIT - BEC - Remp. Groupe de Sécurité</a></mark></mark><mark class="highlight-blue"><mark class="highlight-blue_background"><strong> ]</strong></mark></mark></h3><p id="141a9883-a2b4-81b5-861a-e703847ddc19" class=""><mark class="highlight-default"><mark class="highlight-default_background"><strong>T1</strong></mark></mark><mark class="highlight-default"><mark class="highlight-default_background"> : 95€   -   </mark></mark><mark class="highlight-default"><mark class="highlight-default_background"><strong>T2</strong></mark></mark><mark class="highlight-default"><mark class="highlight-default_background"> : 120€   -   </mark></mark><mark class="highlight-default"><mark class="highlight-default_background"><strong>B1</strong></mark></mark><mark class="highlight-default"><mark class="highlight-default_background"> : 115€   -   </mark></mark><mark class="highlight-default"><mark class="highlight-default_background"><strong>B2</strong></mark></mark><mark class="highlight-default"><mark class="highlight-default_background"> : 140€</mark></mark></p><p id="141a9883-a2b4-8195-aae3-fe8f5caa9175" class="">
+</style></head><body><article id="141a9883-a2b4-80f5-bad5-fe0bb6af3951" class="page sans"><header><h1 class="page-title">⚗️🛡 BEC - Remp. Groupe de Sécurité</h1><p class="page-description"></p></header><div class="page-body"><p id="141a9883-a2b4-8183-8fd6-c9e7e6c1d8ef" class=""><mark class="highlight-gray"><mark class="highlight-gray_background">(Code F100)</mark></mark></p><h3 id="141a9883-a2b4-8170-a518-dff210a4c726" class=""><mark class="highlight-blue"><mark class="highlight-blue_background"><strong>[ + </strong></mark></mark><mark class="highlight-blue"><mark class="highlight-blue_background"><a href="https://form.jotform.com/243215741862355">FORFAIT - BEC - Remp. Groupe de Sécurité</a></mark></mark><mark class="highlight-blue"><mark class="highlight-blue_background"><strong> ]</strong></mark></mark></h3><p id="141a9883-a2b4-81b5-861a-e703847ddc19" class=""><mark class="highlight-default"><mark class="highlight-default_background"><strong>T1</strong></mark></mark><mark class="highlight-default"><mark class="highlight-default_background"> : 95€   -   </mark></mark><mark class="highlight-default"><mark class="highlight-default_background"><strong>T2</strong></mark></mark><mark class="highlight-default"><mark class="highlight-default_background"> : 120€   -   </mark></mark><mark class="highlight-default"><mark class="highlight-default_background"><strong>B1</strong></mark></mark><mark class="highlight-default"><mark class="highlight-default_background"> : 115€   -   </mark></mark><mark class="highlight-default"><mark class="highlight-default_background"><strong>B2</strong></mark></mark><mark class="highlight-default"><mark class="highlight-default_background"> : 140€</mark></mark></p><p id="141a9883-a2b4-8195-aae3-fe8f5caa9175" class=""><script>
+        // Wait for the DOM to fully load
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the current URL
+            const url = window.location.href;
+            
+            // Create a URLSearchParams object from the current URL
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // Access specific parameters
+            const paramCc = urlParams.get('cc'); // Replace 'name' with your parameter key
+            const paramMissionId = urlParams.get('missionId'); // Replace 'age' with your parameter key
+
+            // Example: display these parameters
+            console.log("cc:", paramCc);
+            console.log("missionId:", paramMissionId);
+
+
+            function addParams(url, params) {
+                let newUrl = new URL(url, window.location.origin);
+                for (const key in params) {
+                    newUrl.searchParams.set(key, params[key]);
+                }
+                return newUrl;
+            }
+
+            // Parameters to add
+            const paramsToAdd = { 'missionId': paramMissionId, 'cc': paramCc };
+
+            // Select all anchor tags
+            const links = document.querySelectorAll('a');
+
+            // Iterate through each link and modify its href attribute
+            links.forEach(link => {
+                link.href = addParams(link.href, paramsToAdd);
+            });
+
+        });
+    </script>
+
 </p><p id="141a9883-a2b4-81aa-bbc6-daceb6be2a7a" class="">
 </p><p id="141a9883-a2b4-81e4-bf5e-d0646416d375" class="">
 </p><p id="141a9883-a2b4-8151-977f-e600f367cdb4" class="">

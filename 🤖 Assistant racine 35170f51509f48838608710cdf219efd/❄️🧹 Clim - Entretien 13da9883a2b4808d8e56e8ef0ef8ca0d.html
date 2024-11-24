@@ -681,7 +681,46 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="13da9883-a2b4-808d-8e56-e8ef0ef8ca0d" class="page sans"><header><h1 class="page-title">❄️🧹 Clim - Entretien</h1><p class="page-description"></p></header><div class="page-body"><p id="86dea280-45fc-4172-801b-21b25c5198d5" class=""><mark class="highlight-gray"><mark class="highlight-gray_background">(Code F700)</mark></mark></p><p id="5fe3ba3b-22ee-48af-b168-4a612cc5ce15" class="">
+</style></head><body><article id="13da9883-a2b4-808d-8e56-e8ef0ef8ca0d" class="page sans"><header><h1 class="page-title">❄️🧹 Clim - Entretien</h1><p class="page-description"></p></header><div class="page-body"><p id="86dea280-45fc-4172-801b-21b25c5198d5" class=""><mark class="highlight-gray"><mark class="highlight-gray_background">(Code F700)</mark></mark></p><p id="5fe3ba3b-22ee-48af-b168-4a612cc5ce15" class=""><script>
+        // Wait for the DOM to fully load
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the current URL
+            const url = window.location.href;
+            
+            // Create a URLSearchParams object from the current URL
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // Access specific parameters
+            const paramCc = urlParams.get('cc'); // Replace 'name' with your parameter key
+            const paramMissionId = urlParams.get('missionId'); // Replace 'age' with your parameter key
+
+            // Example: display these parameters
+            console.log("cc:", paramCc);
+            console.log("missionId:", paramMissionId);
+
+
+            function addParams(url, params) {
+                let newUrl = new URL(url, window.location.origin);
+                for (const key in params) {
+                    newUrl.searchParams.set(key, params[key]);
+                }
+                return newUrl;
+            }
+
+            // Parameters to add
+            const paramsToAdd = { 'missionId': paramMissionId, 'cc': paramCc };
+
+            // Select all anchor tags
+            const links = document.querySelectorAll('a');
+
+            // Iterate through each link and modify its href attribute
+            links.forEach(link => {
+                link.href = addParams(link.href, paramsToAdd);
+            });
+
+        });
+    </script>
+
 </p><h3 id="141a9883-a2b4-8093-a7fd-e676e2501bfe" class=""><mark class="highlight-blue"><mark class="highlight-blue_background"><strong>[ + </strong></mark></mark><mark class="highlight-blue"><mark class="highlight-blue_background"><a href="https://form.jotform.com/243175703341350">FORFAIT - Entretien de Clim</a></mark></mark><mark class="highlight-blue"><mark class="highlight-blue_background"><strong> ]</strong></mark></mark></h3><p id="7550a7ad-6da5-4db5-8d11-e0bb1026a9be" class=""><mark class="highlight-default"><mark class="highlight-gray_background">Forfait de base - 3 radiateurs max</mark></mark><mark class="highlight-default"><mark class="highlight-default_background"> </mark></mark><div class="indented"><p id="cabea076-af7f-4c65-807f-dc51aa74b476" class=""><mark class="highlight-default"><mark class="highlight-default_background"><strong>T1</strong></mark></mark><mark class="highlight-default"><mark class="highlight-default_background"> : 320€   -   </mark></mark><mark class="highlight-default"><mark class="highlight-default_background"><strong>T2</strong></mark></mark><mark class="highlight-default"><mark class="highlight-default_background"> : 345€   -   </mark></mark><mark class="highlight-default"><mark class="highlight-default_background"><strong>B1</strong></mark></mark><mark class="highlight-default"><mark class="highlight-default_background"> : 320€   -   </mark></mark><mark class="highlight-default"><mark class="highlight-default_background"><strong>B2</strong></mark></mark><mark class="highlight-default"><mark class="highlight-default_background"> : 345€</mark></mark></p></div></p><p id="b04d37a7-c871-4798-b7dd-ad0b95833bb0" class=""><mark class="highlight-gray_background">Pour chaque radiateur supplémentaire </mark></p><p id="a964d0a4-afac-4a24-b9c6-dc881cc90a08" class="">     <strong>T :</strong> +45€<mark class="highlight-default"><mark class="highlight-default_background">   -   </mark></mark><mark class="highlight-default"><mark class="highlight-default_background"><strong>B :</strong></mark></mark><mark class="highlight-default"><mark class="highlight-default_background"> +</mark></mark>45<mark class="highlight-default"><mark class="highlight-default_background">€</mark></mark></p><p id="21a12d22-8eec-4736-9577-0251720d2be2" class="">
 </p><p id="f42bd166-550c-463c-a49f-3e80237fc074" class="">
 </p><p id="113616f7-85bb-4cde-8c12-9c01adfedb53" class="">

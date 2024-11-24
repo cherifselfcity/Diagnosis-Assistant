@@ -681,6 +681,45 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="10ca9883-a2b4-80ac-8508-f17d47c1b4a8" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/verified_green.svg"/></div><h1 class="page-title">⚗️🚫⚡️ Dysfonctionnement électrique sur Chauffe-eau</h1><p class="page-description"></p></header><div class="page-body"><p id="10ca9883-a2b4-8011-a80b-ebb7f97ebc8c" class=""><mark class="highlight-gray"><mark class="highlight-gray_background">(Code G10)</mark></mark></p><h3 id="10ca9883-a2b4-809a-b97e-ef3b6c4972fc" class=""><strong>Causes probables </strong></h3><ul id="10ca9883-a2b4-80de-b59d-f2f12c1173e5" class="bulleted-list"><li style="list-style-type:disc">Thermostat - à remplacer</li></ul><ul id="10ca9883-a2b4-8052-b502-c840129e1601" class="bulleted-list"><li style="list-style-type:disc">Résistance - à remplacer</li></ul><ul id="10ca9883-a2b4-8045-9e4e-d5bb0ec9b2cb" class="bulleted-list"><li style="list-style-type:disc">Tableau électrique - remplacer disjoncteur ou contacteur</li></ul><ul id="10ca9883-a2b4-80b4-9a2f-dce91830c006" class="bulleted-list"><li style="list-style-type:disc">Chauffe-eau trop vieux - remplacer entièrement</li></ul><p id="10ca9883-a2b4-8042-852a-e99c96ccd820" class="">
+</style></head><body><article id="10ca9883-a2b4-80ac-8508-f17d47c1b4a8" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/verified_green.svg"/></div><h1 class="page-title">⚗️🚫⚡️ Dysfonctionnement électrique sur Chauffe-eau</h1><p class="page-description"></p></header><div class="page-body"><p id="10ca9883-a2b4-8011-a80b-ebb7f97ebc8c" class=""><mark class="highlight-gray"><mark class="highlight-gray_background">(Code G10)</mark></mark></p><h3 id="10ca9883-a2b4-809a-b97e-ef3b6c4972fc" class=""><strong>Causes probables </strong></h3><ul id="10ca9883-a2b4-80de-b59d-f2f12c1173e5" class="bulleted-list"><li style="list-style-type:disc">Thermostat - à remplacer</li></ul><ul id="10ca9883-a2b4-8052-b502-c840129e1601" class="bulleted-list"><li style="list-style-type:disc">Résistance - à remplacer</li></ul><ul id="10ca9883-a2b4-8045-9e4e-d5bb0ec9b2cb" class="bulleted-list"><li style="list-style-type:disc">Tableau électrique - remplacer disjoncteur ou contacteur</li></ul><ul id="10ca9883-a2b4-80b4-9a2f-dce91830c006" class="bulleted-list"><li style="list-style-type:disc">Chauffe-eau trop vieux - remplacer entièrement</li></ul><p id="10ca9883-a2b4-8042-852a-e99c96ccd820" class=""><script>
+        // Wait for the DOM to fully load
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the current URL
+            const url = window.location.href;
+            
+            // Create a URLSearchParams object from the current URL
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // Access specific parameters
+            const paramCc = urlParams.get('cc'); // Replace 'name' with your parameter key
+            const paramMissionId = urlParams.get('missionId'); // Replace 'age' with your parameter key
+
+            // Example: display these parameters
+            console.log("cc:", paramCc);
+            console.log("missionId:", paramMissionId);
+
+
+            function addParams(url, params) {
+                let newUrl = new URL(url, window.location.origin);
+                for (const key in params) {
+                    newUrl.searchParams.set(key, params[key]);
+                }
+                return newUrl;
+            }
+
+            // Parameters to add
+            const paramsToAdd = { 'missionId': paramMissionId, 'cc': paramCc };
+
+            // Select all anchor tags
+            const links = document.querySelectorAll('a');
+
+            // Iterate through each link and modify its href attribute
+            links.forEach(link => {
+                link.href = addParams(link.href, paramsToAdd);
+            });
+
+        });
+    </script>
+
 </p><h3 id="10ca9883-a2b4-8021-81f2-d284d7474e56" class="">Protocole de réparation </h3><p id="118a9883-a2b4-8089-b858-f9efc6145e63" class="">Nécessite un déplacement du technicien pour préciser le diagnostic final parmi les causes probables. <br/>Selon la diagnostic final, il s’agit de procéder à l’une des réparation suivantes : <br/></p><ul id="118a9883-a2b4-80f7-a2c6-e08b83476297" class="bulleted-list"><li style="list-style-type:disc">Remplacement du thermostat</li></ul><ul id="118a9883-a2b4-80ad-87fc-c17fdc49fdb2" class="bulleted-list"><li style="list-style-type:disc">Remplacement de la résistance</li></ul><ul id="118a9883-a2b4-8022-9007-d153bb1e41e2" class="bulleted-list"><li style="list-style-type:disc">Remplacement du disjoncteur ou du contacteur du tableau électrique</li></ul><ul id="118a9883-a2b4-80fd-9db0-f736ce2be76e" class="bulleted-list"><li style="list-style-type:disc">Remplacement du chauffe-eau en entier</li></ul><p id="118a9883-a2b4-80b0-9c92-ea1717e6dd8d" class="">
 </p><h3 id="118a9883-a2b4-803d-b13c-c7ceb0d87898" class="">Planification</h3><p id="118a9883-a2b4-803f-a5d0-cb4948b17276" class="">Un RDV d’1 heure</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

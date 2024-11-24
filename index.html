@@ -681,7 +681,46 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="35170f51-509f-4883-8608-710cdf219efd" class="page sans"><header><h1 class="page-title">🤖 Assistant racine</h1><p class="page-description"></p></header><div class="page-body"><p id="562ff98d-7fcb-42de-878b-ed8fae57a35b" class=""><strong>Forfaits en accès direct </strong></p><p id="141a9883-a2b4-800a-acaf-d3b3b787f46f" class=""><div class="indented"><p id="141a9883-a2b4-8090-ba61-d46d52f5ea61" class=""><mark class="highlight-orange_background">Chaudières et chauffage</mark></p><figure id="127a9883-a2b4-8042-ac61-d3045e79e518" class="link-to-page"><a href="%F0%9F%A4%96%20Assistant%20racine%2035170f51509f48838608710cdf219efd/%F0%9F%94%A5%F0%9F%A7%B9%20Entretien%20de%20Chaudie%CC%80re%20Gaz%20(et%20contrat)%20127a9883a2b48042ac61d3045e79e518.html">🔥🧹 Entretien de Chaudière Gaz (et contrat)</a></figure><figure id="13ba9883-a2b4-8030-a0de-e636e30d9504" class="link-to-page"><a href="%F0%9F%A4%96%20Assistant%20racine%2035170f51509f48838608710cdf219efd/%F0%9F%A7%B9%20De%CC%81sembouage%2013ba9883a2b48030a0dee636e30d9504.html">🧹 Désembouage </a></figure><p id="141a9883-a2b4-800e-9426-e1357ca9db4d" class="">
+</style></head><body><article id="35170f51-509f-4883-8608-710cdf219efd" class="page sans"><header><h1 class="page-title">🤖 Assistant racine</h1><p class="page-description"></p></header><div class="page-body"><p id="562ff98d-7fcb-42de-878b-ed8fae57a35b" class=""><strong>Forfaits en accès direct </strong></p><p id="141a9883-a2b4-800a-acaf-d3b3b787f46f" class=""><div class="indented"><p id="141a9883-a2b4-8090-ba61-d46d52f5ea61" class=""><mark class="highlight-orange_background">Chaudières et chauffage</mark></p><figure id="127a9883-a2b4-8042-ac61-d3045e79e518" class="link-to-page"><a href="%F0%9F%A4%96%20Assistant%20racine%2035170f51509f48838608710cdf219efd/%F0%9F%94%A5%F0%9F%A7%B9%20Entretien%20de%20Chaudie%CC%80re%20Gaz%20(et%20contrat)%20127a9883a2b48042ac61d3045e79e518.html">🔥🧹 Entretien de Chaudière Gaz (et contrat)</a></figure><figure id="13ba9883-a2b4-8030-a0de-e636e30d9504" class="link-to-page"><a href="%F0%9F%A4%96%20Assistant%20racine%2035170f51509f48838608710cdf219efd/%F0%9F%A7%B9%20De%CC%81sembouage%2013ba9883a2b48030a0dee636e30d9504.html">🧹 Désembouage </a></figure><p id="141a9883-a2b4-800e-9426-e1357ca9db4d" class=""><script>
+        // Wait for the DOM to fully load
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the current URL
+            const url = window.location.href;
+            
+            // Create a URLSearchParams object from the current URL
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // Access specific parameters
+            const paramCc = urlParams.get('cc'); // Replace 'name' with your parameter key
+            const paramMissionId = urlParams.get('missionId'); // Replace 'age' with your parameter key
+
+            // Example: display these parameters
+            console.log("cc:", paramCc);
+            console.log("missionId:", paramMissionId);
+
+
+            function addParams(url, params) {
+                let newUrl = new URL(url, window.location.origin);
+                for (const key in params) {
+                    newUrl.searchParams.set(key, params[key]);
+                }
+                return newUrl;
+            }
+
+            // Parameters to add
+            const paramsToAdd = { 'missionId': paramMissionId, 'cc': paramCc };
+
+            // Select all anchor tags
+            const links = document.querySelectorAll('a');
+
+            // Iterate through each link and modify its href attribute
+            links.forEach(link => {
+                link.href = addParams(link.href, paramsToAdd);
+            });
+
+        });
+    </script>
+
 </p><p id="141a9883-a2b4-80f2-b1c9-e4465872a55e" class=""><mark class="highlight-blue_background">WC et chasse d’eau</mark></p><figure id="eae20111-80e1-4215-8f0b-f618866dc6b5" class="link-to-page"><a href="%F0%9F%A4%96%20Assistant%20racine%2035170f51509f48838608710cdf219efd/%F0%9F%9A%BD%F0%9F%AA%A0%20De%CC%81bouchage%20WC%20classique%20eae2011180e142158f0bf618866dc6b5.html">🚽🪠 Débouchage WC classique</a></figure><figure id="127a9883-a2b4-807a-802e-f9081e4953b2" class="link-to-page"><a href="%F0%9F%A4%96%20Assistant%20racine%2035170f51509f48838608710cdf219efd/%F0%9F%9A%BD%F0%9F%A7%B2%20Remplacement%20Abattant%20WC%20127a9883a2b4807a802ef9081e4953b2.html">🚽🧲 Remplacement Abattant WC</a></figure><figure id="136a9883-a2b4-809b-b252-f459a03c07e5" class="link-to-page"><a href="%F0%9F%A4%96%20Assistant%20racine%2035170f51509f48838608710cdf219efd/%F0%9F%9A%BD%F0%9F%8C%8A%20De%CC%81pannage%20Remplacement%20Me%CC%81canisme%20Chasse%20d%E2%80%99eau%20136a9883a2b4809bb252f459a03c07e5.html">🚽🌊 Dépannage/Remplacement Mécanisme Chasse d’eau</a></figure><p id="141a9883-a2b4-809f-966f-f59853897d52" class="">
 </p><p id="141a9883-a2b4-80b2-b7ff-f94db50e597e" class=""><mark class="highlight-teal_background">Climatisation</mark></p><figure id="13da9883-a2b4-808d-8e56-e8ef0ef8ca0d" class="link-to-page"><a href="%F0%9F%A4%96%20Assistant%20racine%2035170f51509f48838608710cdf219efd/%E2%9D%84%EF%B8%8F%F0%9F%A7%B9%20Clim%20-%20Entretien%2013da9883a2b4808d8e56e8ef0ef8ca0d.html">❄️🧹 Clim - Entretien</a></figure><p id="141a9883-a2b4-807f-bee5-ea422090b33b" class="">
 </p><p id="141a9883-a2b4-80f7-b84c-c86c94fd34bc" class=""><mark class="highlight-yellow_background">Ballon d’eau chaude</mark></p><figure id="141a9883-a2b4-80f5-bad5-fe0bb6af3951" class="link-to-page"><a href="%F0%9F%A4%96%20Assistant%20racine%2035170f51509f48838608710cdf219efd/%E2%9A%97%EF%B8%8F%F0%9F%9B%A1%20BEC%20-%20Remp%20Groupe%20de%20Se%CC%81curite%CC%81%20141a9883a2b480f5bad5fe0bb6af3951.html">⚗️🛡 BEC - Remp. Groupe de Sécurité</a></figure><figure id="141a9883-a2b4-8094-b168-c10c17d02bb1" class="link-to-page"><a href="%F0%9F%A4%96%20Assistant%20racine%2035170f51509f48838608710cdf219efd/%E2%9A%97%EF%B8%8F%F0%9F%8E%9A%20BEC%20-%20Remp%20Contacteur%20Jour%20Nuit%20141a9883a2b48094b168c10c17d02bb1.html">⚗️🎚 BEC - Remp. Contacteur Jour/Nuit</a></figure><p id="141a9883-a2b4-80cd-bbf5-c605974068a8" class="">

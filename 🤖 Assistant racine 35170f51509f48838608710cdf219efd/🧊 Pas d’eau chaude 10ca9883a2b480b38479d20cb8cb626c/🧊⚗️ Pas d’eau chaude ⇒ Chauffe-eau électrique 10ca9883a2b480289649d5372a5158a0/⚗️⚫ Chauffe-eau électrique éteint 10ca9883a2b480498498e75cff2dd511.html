@@ -681,7 +681,46 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="10ca9883-a2b4-8049-8498-e75cff2dd511" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/verified_green.svg"/></div><h1 class="page-title">⚗️⚫ Chauffe-eau électrique éteint</h1><p class="page-description"></p></header><div class="page-body"><p id="112a9883-a2b4-8062-b0fa-c600376263e0" class=""><mark class="highlight-gray"><mark class="highlight-gray_background">(Code G11)</mark></mark></p><p id="10ca9883-a2b4-8053-98d5-d0ecc5daa710" class="">
+</style></head><body><article id="10ca9883-a2b4-8049-8498-e75cff2dd511" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/verified_green.svg"/></div><h1 class="page-title">⚗️⚫ Chauffe-eau électrique éteint</h1><p class="page-description"></p></header><div class="page-body"><p id="112a9883-a2b4-8062-b0fa-c600376263e0" class=""><mark class="highlight-gray"><mark class="highlight-gray_background">(Code G11)</mark></mark></p><p id="10ca9883-a2b4-8053-98d5-d0ecc5daa710" class=""><script>
+        // Wait for the DOM to fully load
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the current URL
+            const url = window.location.href;
+            
+            // Create a URLSearchParams object from the current URL
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // Access specific parameters
+            const paramCc = urlParams.get('cc'); // Replace 'name' with your parameter key
+            const paramMissionId = urlParams.get('missionId'); // Replace 'age' with your parameter key
+
+            // Example: display these parameters
+            console.log("cc:", paramCc);
+            console.log("missionId:", paramMissionId);
+
+
+            function addParams(url, params) {
+                let newUrl = new URL(url, window.location.origin);
+                for (const key in params) {
+                    newUrl.searchParams.set(key, params[key]);
+                }
+                return newUrl;
+            }
+
+            // Parameters to add
+            const paramsToAdd = { 'missionId': paramMissionId, 'cc': paramCc };
+
+            // Select all anchor tags
+            const links = document.querySelectorAll('a');
+
+            // Iterate through each link and modify its href attribute
+            links.forEach(link => {
+                link.href = addParams(link.href, paramsToAdd);
+            });
+
+        });
+    </script>
+
 </p><h3 id="112a9883-a2b4-802c-b737-d2edbd58b356" class=""><strong>Causes probables </strong></h3><p id="118a9883-a2b4-80a0-ae12-d0834719d50d" class="">Le disjoncteur est baissé, le chauffe-eau n’est pas alimenté électriquement</p><p id="118a9883-a2b4-805a-a5b1-f9da672f5d50" class="">
 </p><h3 id="118a9883-a2b4-8003-985a-ffc272c747a0" class="">Protocole de réparation </h3><p id="118a9883-a2b4-80e2-88a6-f7db40a1be12" class="">❗<mark class="highlight-orange_background">Pas d’intervention Selfcity pour l’instant</mark><br/><br/><strong>Manipulation à faire par le client :</strong><br/>Lever le disjoncteur, attendre 4h et voir si l’eau chaude revient.<br/>Si elle ne revient pas, nous rappeler<br/></p><p id="118a9883-a2b4-80cb-a601-e12ae9699517" class="">
 </p><p id="118a9883-a2b4-805d-84d5-fdc034047fec" class="">
