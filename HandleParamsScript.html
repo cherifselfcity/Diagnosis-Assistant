@@ -10,7 +10,8 @@
             // Access specific parameters
             const paramCc = urlParams.get('cc'); // Replace 'name' with your parameter key
             const paramMissionId = urlParams.get('missionId'); // Replace 'age' with your parameter key
-            const paramHost = urlParams.get('host');
+            const paramRestApiHost = urlParams.get('rest_api_host');
+            const paramGraphqlApiHost = urlParams.get('graphql_api_host');
 
             // Example: display these parameters
             console.log("cc:", paramCc);
@@ -26,7 +27,7 @@
             }
 
             // Parameters to add
-            const paramsToAdd = { 'missionId': paramMissionId, 'cc': paramCc, 'host': paramHost };
+            const paramsToAdd = { 'missionId': paramMissionId, 'cc': paramCc, 'rest_api_host': paramRestApiHost, 'graphql_api_host': paramGraphqlApiHost };
 
             // Select all anchor tags
             const links = document.querySelectorAll('a');
