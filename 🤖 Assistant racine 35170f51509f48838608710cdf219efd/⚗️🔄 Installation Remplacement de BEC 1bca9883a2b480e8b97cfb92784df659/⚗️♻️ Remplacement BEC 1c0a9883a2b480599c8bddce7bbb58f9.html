@@ -129,6 +129,11 @@ img {
 	font-size: 0.875rem;
 }
 
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
 .column-list {
 	display: flex;
 	justify-content: space-between;
@@ -315,11 +320,12 @@ time {
 }
 
 .icon {
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	max-width: 1.2em;
 	max-height: 1.2em;
 	text-decoration: none;
-	vertical-align: text-bottom;
 	margin-right: 0.5em;
 }
 
@@ -430,10 +436,14 @@ code {
 }
 
 blockquote {
-	font-size: 1.25em;
+	font-size: 1em;
 	margin: 1em 0;
 	padding-left: 1em;
 	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
 }
 
 .bookmark {
@@ -509,155 +519,155 @@ blockquote {
 .pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
 .pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
 .highlight-default {
-	color: rgba(50, 48, 44, 1);
+	color: rgba(44, 44, 43, 1);
 }
 .highlight-gray {
-	color: rgba(115, 114, 110, 1);
-	fill: rgba(115, 114, 110, 1);
+	color: rgba(128, 125, 120, 1);
+	fill: rgba(128, 125, 120, 1);
 }
 .highlight-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
 }
 .highlight-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
+	color: rgba(204, 121, 47, 1);
+	fill: rgba(204, 121, 47, 1);
 }
 .highlight-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
+	color: rgba(195, 148, 67, 1);
+	fill: rgba(195, 148, 67, 1);
 }
 .highlight-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
 }
 .highlight-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
+	color: rgba(63, 126, 190, 1);
+	fill: rgba(63, 126, 190, 1);
 }
 .highlight-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
 }
 .highlight-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
+	color: rgba(179, 84, 136, 1);
+	fill: rgba(179, 84, 136, 1);
 }
 .highlight-red {
-	color: rgba(205, 60, 58, 1);
-	fill: rgba(205, 60, 58, 1);
+	color: rgba(201, 85, 73, 1);
+	fill: rgba(201, 85, 73, 1);
 }
 .highlight-default_background {
-	color: rgba(50, 48, 44, 1);
+	color: rgba(44, 44, 43, 1);
 }
 .highlight-gray_background {
-	background: rgba(248, 248, 247, 1);
+	background: rgba(42, 28, 0, 0.07);
 }
 .highlight-brown_background {
-	background: rgba(244, 238, 238, 1);
+	background: rgba(139, 46, 0, 0.086);
 }
 .highlight-orange_background {
-	background: rgba(251, 236, 221, 1);
+	background: rgba(224, 101, 1, 0.129);
 }
 .highlight-yellow_background {
-	background: rgba(251, 243, 219, 1);
+	background: rgba(211, 168, 0, 0.137);
 }
 .highlight-teal_background {
-	background: rgba(237, 243, 236, 1);
+	background: rgba(0, 100, 45, 0.09);
 }
 .highlight-blue_background {
-	background: rgba(231, 243, 248, 1);
+	background: rgba(0, 111, 200, 0.09);
 }
 .highlight-purple_background {
-	background: rgba(248, 243, 252, 1);
+	background: rgba(102, 0, 178, 0.078);
 }
 .highlight-pink_background {
-	background: rgba(252, 241, 246, 1);
+	background: rgba(197, 0, 93, 0.086);
 }
 .highlight-red_background {
-	background: rgba(253, 235, 236, 1);
+	background: rgba(223, 22, 0, 0.094);
 }
 .block-color-default {
 	color: inherit;
 	fill: inherit;
 }
 .block-color-gray {
-	color: rgba(115, 114, 110, 1);
-	fill: rgba(115, 114, 110, 1);
+	color: rgba(128, 125, 120, 1);
+	fill: rgba(128, 125, 120, 1);
 }
 .block-color-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
 }
 .block-color-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
+	color: rgba(204, 121, 47, 1);
+	fill: rgba(204, 121, 47, 1);
 }
 .block-color-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
+	color: rgba(195, 148, 67, 1);
+	fill: rgba(195, 148, 67, 1);
 }
 .block-color-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
 }
 .block-color-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
+	color: rgba(63, 126, 190, 1);
+	fill: rgba(63, 126, 190, 1);
 }
 .block-color-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
 }
 .block-color-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
+	color: rgba(179, 84, 136, 1);
+	fill: rgba(179, 84, 136, 1);
 }
 .block-color-red {
-	color: rgba(205, 60, 58, 1);
-	fill: rgba(205, 60, 58, 1);
+	color: rgba(201, 85, 73, 1);
+	fill: rgba(201, 85, 73, 1);
 }
 .block-color-default_background {
 	color: inherit;
 	fill: inherit;
 }
 .block-color-gray_background {
-	background: rgba(248, 248, 247, 1);
+	background: rgba(240, 239, 237, 1);
 }
 .block-color-brown_background {
-	background: rgba(244, 238, 238, 1);
+	background: rgba(245, 237, 233, 1);
 }
 .block-color-orange_background {
-	background: rgba(251, 236, 221, 1);
+	background: rgba(251, 235, 222, 1);
 }
 .block-color-yellow_background {
-	background: rgba(251, 243, 219, 1);
+	background: rgba(249, 243, 220, 1);
 }
 .block-color-teal_background {
-	background: rgba(237, 243, 236, 1);
+	background: rgba(232, 241, 236, 1);
 }
 .block-color-blue_background {
-	background: rgba(231, 243, 248, 1);
+	background: rgba(232, 242, 250, 1);
 }
 .block-color-purple_background {
-	background: rgba(248, 243, 252, 1);
+	background: rgba(243, 235, 249, 1);
 }
 .block-color-pink_background {
-	background: rgba(252, 241, 246, 1);
+	background: rgba(250, 233, 241, 1);
 }
 .block-color-red_background {
-	background: rgba(253, 235, 236, 1);
+	background: rgba(252, 233, 231, 1);
 }
-.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
-.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
-.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
-.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
-.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
-.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
-.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
-.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
-.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
-.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 99, 174, 0.172); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
 
 .checkbox {
 	display: inline-flex;
@@ -719,6 +729,6 @@ blockquote {
         });
     </script>
 
-</p><h3 id="1c0a9883-a2b4-80f8-bc8a-e7ec7d894bdd" class=""><mark class="highlight-teal_background">Étape 2 : Analyse</mark></h3><p id="1c0a9883-a2b4-807c-bb60-e31a41f25632" class="">Une fois les photos analysées suivre le protocole ci-dessous 👇</p><p id="1c2a9883-a2b4-8057-bbc2-e5e2393915dc" class=""><strong>⬩L’espace autour du BEC est-il dégagé ?</strong></p><ul id="1c2a9883-a2b4-8023-be29-ed8eaf0a7719" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Oui</span> <mark class="highlight-gray">(bcp d’espace autour du BEC)</mark></summary><p id="1c2a9883-a2b4-80ff-a6c2-db8be121e63b" class="">⬩⬩<strong>Le client a-t-il posé une contrainte spécifique sur la marque du BEC ?</strong><div class="indented"><ul id="1c2a9883-a2b4-809f-8a13-f6b1bc19522b" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Non</span></summary><p id="1c2a9883-a2b4-80f9-9d31-da690dc9c89f" class="">👌 <mark class="highlight-blue_background">Choisir un BEC au mêmes caractéristiques que l’ancien que l’ancien :</mark></p><ul id="1c2a9883-a2b4-8016-b0be-f82788e0561a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background">Litrage (si pas le même litrage, prendre juste au dessus)</mark></li></ul><ul id="1c2a9883-a2b4-8080-be4c-e69ffcf0e65f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background">Horizontal / Vertical</mark></li></ul><ul id="1c2a9883-a2b4-80f2-a83e-d4b7fd3faceb" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background">Plat ? Oui / Non</mark></li></ul><ul id="1c2a9883-a2b4-807d-95ca-e46a8e0d59ce" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background">Vertical mural / vertical stable</mark></li></ul><p id="1c2a9883-a2b4-8067-836e-dd07ebaef029" class=""><mark class="highlight-blue_background">Parmi les modèles du fichier ci-dessous : </mark></p><figure id="1c2a9883-a2b4-8068-a333-cce907573724"><div class="source"><a href="%E2%9A%97%EF%B8%8F%E2%99%BB%EF%B8%8F%20Remplacement%20BEC%201c0a9883a2b480599c8bddce7bbb58f9/BEC_Negocies_CEDEO.pdf">BEC Négociés CEDEO.pdf</a></div></figure></details></li></ul><ul id="1c2a9883-a2b4-80d3-bcae-c93e972b7ae9" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Oui</span></summary><p id="1c2a9883-a2b4-800b-b777-c9f37946f71d" class="">👌 <mark class="highlight-blue_background">Chercher le BEC choisit par le client au meilleur prix en comparant nos fournisseurs. <br/>Si difficulté, demander au au chef d’équipe.<br/></mark></p></details></li></ul></div></p></details></li></ul><ul id="1c2a9883-a2b4-8067-9a64-d32e813d2542" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Non</span> <mark class="highlight-gray">(BEC dans un placard ou un endroit exigu)</mark></summary><p id="1c2a9883-a2b4-8053-bab6-e30a0847de6f" class="">⬩⬩<strong>Le client est-il OK pour installer le même modèle que l’ancien ?</strong></p><p id="1c2a9883-a2b4-808c-a926-d26ef65d3a3d" class=""><mark class="highlight-gray">(il n’a pas manifesté de souhait contraire)</mark></p><ul id="1c2a9883-a2b4-80da-8178-eb577790c4a0" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Oui</span></summary><p id="1c2a9883-a2b4-8042-ba30-f816217f907b" class="">⬩⬩⬩<strong>Le modèle de l’ancien BEC est-il disponible chez nos fournisseurs ?</strong></p><ul id="1c2a9883-a2b4-802c-86df-d3cfaf0df975" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Oui</span></summary><p id="1c2a9883-a2b4-80ef-bc8b-c95dbef41532" class="">👌 <mark class="highlight-blue_background">Choisir ce modèle pour le nouveau BEC chez le fournisseur le moins cher.</mark></p></details></li></ul><ul id="1c2a9883-a2b4-80c3-96de-e459f860eb69" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Non</span></summary><p id="1c2a9883-a2b4-8006-803f-ed4c2e801961" class="">👌 <mark class="highlight-blue_background">Soit on prend le même modèle chez un nouveau fournisseur, soit on prend un autre modèle de BEC qui a des dimensions compatibles avec l’espace disponible. <br/>👉 Demander au chef d’équipe qui va décider<br/></mark></p></details></li></ul></details></li></ul><ul id="1c2a9883-a2b4-80f9-8e03-d6591b6106fd" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Non</span> <mark class="highlight-gray">(il veut un modèle différent)</mark></summary><p id="1c2a9883-a2b4-8093-92f0-d69986ecd0ca" class="">👌 <mark class="highlight-blue_background">Demander de l’aide au chef d’équipe qui va décider du BEC à choisir.</mark></p></details></li></ul></details></li></ul><p id="1c2a9883-a2b4-8098-908a-f4ca3174e64a" class="">
+</p><h3 id="1c0a9883-a2b4-80f8-bc8a-e7ec7d894bdd" class=""><mark class="highlight-teal_background">Étape 2 : Analyse</mark></h3><p id="1c0a9883-a2b4-807c-bb60-e31a41f25632" class="">Une fois les photos analysées suivre le protocole ci-dessous 👇</p><p id="1c2a9883-a2b4-8057-bbc2-e5e2393915dc" class=""><strong>⬩L’espace autour du BEC est-il dégagé ?</strong></p><ul id="1c2a9883-a2b4-8023-be29-ed8eaf0a7719" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Oui</span> <mark class="highlight-gray">(bcp d’espace autour du BEC)</mark></summary><p id="1c2a9883-a2b4-80ff-a6c2-db8be121e63b" class="">⬩⬩<strong>Le client a-t-il posé une contrainte spécifique sur la marque du BEC ?</strong><div class="indented"><ul id="1c2a9883-a2b4-809f-8a13-f6b1bc19522b" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Non</span></summary><p id="1c2a9883-a2b4-80f9-9d31-da690dc9c89f" class="">👌 <mark class="highlight-blue_background">Choisir un BEC au mêmes caractéristiques que l’ancien que l’ancien :</mark></p><ul id="1c2a9883-a2b4-8016-b0be-f82788e0561a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background">Litrage (si pas le même litrage, prendre juste au dessus)</mark></li></ul><ul id="1c2a9883-a2b4-8080-be4c-e69ffcf0e65f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background">Horizontal / Vertical</mark></li></ul><ul id="1c2a9883-a2b4-80f2-a83e-d4b7fd3faceb" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background">Plat ? Oui / Non</mark></li></ul><ul id="1c2a9883-a2b4-807d-95ca-e46a8e0d59ce" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background">Vertical mural / vertical stable</mark></li></ul><p id="1c2a9883-a2b4-8067-836e-dd07ebaef029" class=""><mark class="highlight-blue_background">Parmi les modèles du fichier ci-dessous : </mark></p><figure id="1c2a9883-a2b4-8068-a333-cce907573724"><div class="source"><a href="%E2%9A%97%EF%B8%8F%E2%99%BB%EF%B8%8F%20Remplacement%20BEC%201c0a9883a2b480599c8bddce7bbb58f9/BEC_Negocies_CEDEO.pdf">BEC Négociés CEDEO.pdf</a></div></figure></details></li></ul><ul id="1c2a9883-a2b4-80d3-bcae-c93e972b7ae9" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Oui</span></summary><p id="1c2a9883-a2b4-800b-b777-c9f37946f71d" class="">👌 <mark class="highlight-blue_background">Chercher le BEC choisit par le client au meilleur prix en comparant nos fournisseurs. <br/>Si difficulté, demander au au chef d’équipe.</mark></p></details></li></ul></div></p></details></li></ul><ul id="1c2a9883-a2b4-8067-9a64-d32e813d2542" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Non</span> <mark class="highlight-gray">(BEC dans un placard ou un endroit exigu)</mark></summary><p id="1c2a9883-a2b4-8053-bab6-e30a0847de6f" class="">⬩⬩<strong>Le client est-il OK pour installer le même modèle que l’ancien ?</strong></p><p id="1c2a9883-a2b4-808c-a926-d26ef65d3a3d" class=""><mark class="highlight-gray">(il n’a pas manifesté de souhait contraire)</mark></p><ul id="1c2a9883-a2b4-80da-8178-eb577790c4a0" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Oui</span></summary><p id="1c2a9883-a2b4-8042-ba30-f816217f907b" class="">⬩⬩⬩<strong>Le modèle de l’ancien BEC est-il disponible chez nos fournisseurs ?</strong></p><ul id="1c2a9883-a2b4-802c-86df-d3cfaf0df975" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Oui</span></summary><p id="1c2a9883-a2b4-80ef-bc8b-c95dbef41532" class="">👌 <mark class="highlight-blue_background">Choisir ce modèle pour le nouveau BEC chez le fournisseur le moins cher.</mark></p></details></li></ul><ul id="1c2a9883-a2b4-80c3-96de-e459f860eb69" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Non</span></summary><p id="1c2a9883-a2b4-8006-803f-ed4c2e801961" class="">👌 <mark class="highlight-blue_background">Soit on prend le même modèle chez un nouveau fournisseur, soit on prend un autre modèle de BEC qui a des dimensions compatibles avec l’espace disponible. <br/>👉 Demander au chef d’équipe qui va décider</mark></p></details></li></ul></details></li></ul><ul id="1c2a9883-a2b4-80f9-8e03-d6591b6106fd" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid">Non</span> <mark class="highlight-gray">(il veut un modèle différent)</mark></summary><p id="1c2a9883-a2b4-8093-92f0-d69986ecd0ca" class="">👌 <mark class="highlight-blue_background">Demander de l’aide au chef d’équipe qui va décider du BEC à choisir.</mark></p></details></li></ul></details></li></ul><p id="1c2a9883-a2b4-8098-908a-f4ca3174e64a" class="">
 </p><h3 id="1c2a9883-a2b4-8039-a49e-c51f05085e9b" class=""><mark class="highlight-teal_background">Étape 3 : Devisage</mark></h3><p id="1c2a9883-a2b4-80da-bea6-f1e59e126dd1" class="">Une fois le BEC à poser sélectionné, générer le devis express.</p><h3 id="1c0a9883-a2b4-8054-b9b3-c175df34043f" class=""><mark class="highlight-blue"><mark class="highlight-blue_background"><strong>[ + </strong></mark></mark><mark class="highlight-blue_background"><a href="https://form.jotform.com/250084748664364">DEVIS Express - Remplacement de BEC</a></mark><mark class="highlight-blue"><mark class="highlight-blue_background"><strong> ]</strong></mark></mark></h3><p id="1c0a9883-a2b4-8004-a39c-c19963bb91d5" class="">
 </p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
