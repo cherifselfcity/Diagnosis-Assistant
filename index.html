@@ -126,10 +126,35 @@ img {
 		max-height: 100vh;
 		object-fit: contain;
 	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
 }
 
 @page {
 	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
 }
 
 .collection-content {
@@ -143,19 +168,16 @@ img {
 
 .column-list {
 	display: flex;
-	justify-content: space-between;
+	gap: 46px;
 }
 
 .column {
-	padding: 0 1em;
+	min-width: 0;
+	overflow: hidden;
 }
 
-.column:first-child {
-	padding-left: 0;
-}
-
-.column:last-child {
-	padding-right: 0;
+.column > *:first-child {
+	margin-top: 0;
 }
 
 .table_of_contents-item {
@@ -251,6 +273,14 @@ ul > li {
 
 ol {
 	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
 }
 
 ol > li {
@@ -753,9 +783,10 @@ blockquote.quote-large {
     </script>
 
 </p></div><div style="display:contents" dir="auto"><p id="13da9883-a2b4-804f-8c94-d7648002715f" class=""><mark class="highlight-red_background"><strong>SAV demandé</strong></mark></p></div><div style="display:contents" dir="auto"><p id="17aa9883-a2b4-80e6-bf27-e42e55b88d49" class="">⛑ <a href="https://form.jotform.com/230932264204347">Envoyer le formulaire d’analyse au client</a></p></div><div style="display:contents" dir="auto"><p id="17aa9883-a2b4-8078-871b-ea90453485bd" class="">
-</p></div><div style="display:contents" dir="auto"><p id="17aa9883-a2b4-8083-b026-d3906a271d80" class=""><mark class="highlight-red_background"><strong>Photos requises</strong></mark></p></div><div style="display:contents" dir="auto"><p id="17aa9883-a2b4-80d7-9783-e88f04c21424" class="">📸 <a href="https://form.jotform.com/221803814301343">Envoyer une demande de photos</a></p></div><div style="display:contents" dir="auto"><p id="1bca9883-a2b4-808f-8da3-e818173deabd" class="">
-</p></div><div style="display:contents" dir="auto"><p id="1bca9883-a2b4-801c-ab96-da4cf637b2f5" class=""><mark class="highlight-teal_background"><strong>Bêta</strong></mark></p></div><div style="display:contents" dir="auto"><p id="1bca9883-a2b4-80de-abbc-ec7f0a432e95" class="">
-</p></div><div style="display:contents" dir="auto"><p id="1bca9883-a2b4-80e0-b35c-eee11a3ce801" class="">
-</p></div><div style="display:contents" dir="auto"><p id="17aa9883-a2b4-80c5-ab11-f47c6ec63307" class="">
+</p></div><div style="display:contents" dir="auto"><p id="17aa9883-a2b4-8083-b026-d3906a271d80" class=""><mark class="highlight-red_background"><strong>Photos requises</strong></mark></p></div><div style="display:contents" dir="auto"><p id="17aa9883-a2b4-80d7-9783-e88f04c21424" class="">📸 <a href="https://form.jotform.com/221803814301343">Envoyer une demande de photos</a></p></div><div style="display:contents" dir="auto"><p id="33ba9883-a2b4-8070-bdb4-d6a45395df2e" class="">
+</p></div><div style="display:contents" dir="auto"><p id="33ba9883-a2b4-8075-a537-f3f214afc287" class=""><mark class="highlight-red_background"><strong>Création d’un event sur le planning</strong></mark></p></div><div style="display:contents" dir="auto"><p id="1bca9883-a2b4-808f-8da3-e818173deabd" class="">📆 <a href="https://form.jotform.com/260913816211047">https://form.jotform.com/260913816211047</a></p></div><div style="display:contents" dir="auto"><p id="33ba9883-a2b4-8084-88c1-fd5e184c1b56" class="">
+</p></div><div style="display:contents" dir="auto"><p id="33ba9883-a2b4-8089-8d14-e468c00891b3" class="">
+</p></div><div style="display:contents" dir="auto"><p id="33ba9883-a2b4-80c5-9d0a-d1a2b78c6bc5" class="">
+</p></div><div style="display:contents" dir="auto"><p id="1bca9883-a2b4-801c-ab96-da4cf637b2f5" class=""><mark class="highlight-teal_background"><strong>Bêta</strong></mark></p></div><div style="display:contents" dir="auto"><p id="17aa9883-a2b4-80c5-ab11-f47c6ec63307" class="">
 </p></div><div style="display:contents" dir="auto"><hr id="1bca9883-a2b4-8005-870e-ea4cdc7d75f2"/></div><div style="display:contents" dir="auto"><ul id="135a9883-a2b4-80a1-a64c-d69380f44c70" class="toggle"><li><details open=""><summary><mark class="highlight-gray_background"><strong>Autres chemins (en cours de conception)</strong></mark></summary><div style="display:contents" dir="auto"><ul id="114a9883-a2b4-80f5-9ea7-e70744e4e416" class="toggle"><li><details open=""><summary>Tous les diagnostics : </summary><div style="display:contents" dir="auto"><div style="display:contents" dir="ltr"><figure id="10ca9883-a2b4-8049-8498-e75cff2dd511" class="link-to-page"><a href="%F0%9F%A4%96%20Assistant%20racine/%F0%9F%A7%8A%20Pas%20d%E2%80%99eau%20chaude/%F0%9F%A7%8A%E2%9A%97%EF%B8%8F%20Pas%20d%E2%80%99eau%20chaude%20%E2%87%92%20Chauffe-eau%20%C3%A9lectrique/%E2%9A%97%EF%B8%8F%E2%9A%AB%20Chauffe-eau%20%C3%A9lectrique%20%C3%A9teint%2010ca9883a2b480498498e75cff2dd511.html"><img class="icon notion-static-icon" src="https://www.notion.so/icons/verified_green.svg"/>⚗️⚫ Chauffe-eau électrique éteint</a></figure></div></div><div style="display:contents" dir="auto"><div style="display:contents" dir="ltr"><figure id="10ca9883-a2b4-80ac-8508-f17d47c1b4a8" class="link-to-page"><a href="%F0%9F%A4%96%20Assistant%20racine/%F0%9F%A7%8A%20Pas%20d%E2%80%99eau%20chaude/%F0%9F%A7%8A%E2%9A%97%EF%B8%8F%20Pas%20d%E2%80%99eau%20chaude%20%E2%87%92%20Chauffe-eau%20%C3%A9lectrique/%E2%9A%97%EF%B8%8F%F0%9F%9A%AB%E2%9A%A1%EF%B8%8F%20Dysfonctionnement%20%C3%A9lectrique%20sur%20Chauffe-eau%2010ca9883a2b480ac8508f17d47c1b4a8.html"><img class="icon notion-static-icon" src="https://www.notion.so/icons/verified_green.svg"/>⚗️🚫⚡️ Dysfonctionnement électrique sur Chauffe-eau</a></figure></div></div><div style="display:contents" dir="auto"><div style="display:contents" dir="ltr"><figure id="eae20111-80e1-4215-8f0b-f618866dc6b5" class="link-to-page"><a href="%F0%9F%A4%96%20Assistant%20racine/%F0%9F%9A%BD%F0%9F%AA%A0%20Debouchage%20WC%20classique%20eae2011180e142158f0bf618866dc6b5.html">🚽🪠 Debouchage WC classique</a></figure></div></div><div style="display:contents" dir="auto"><div style="display:contents" dir="ltr"><figure id="ae04d230-0446-42da-97ea-b839ff2e7061" class="link-to-page"><a href="%F0%9F%A4%96%20Assistant%20racine/%F0%9F%9A%BD%20WC/%F0%9F%AA%A0%F0%9F%9A%BD%20Engorgement%20WC/%F0%9F%AA%A0%F0%9F%9A%BD%E2%9A%99%EF%B8%8F%20Engorgement%20WC%20sanibroyeur/%F0%9F%AA%A0%F0%9F%9A%BD%E2%9A%99%EF%B8%8F%20D%C3%A9bouchage%20WC%20sanibroyeur%20ae04d230044642da97eab839ff2e7061.html"><img class="icon notion-static-icon" src="https://www.notion.so/icons/verified_green.svg"/>🪠🚽⚙️ Débouchage WC sanibroyeur</a></figure></div></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="149a9883-a2b4-8045-83d5-dbe776db73ab" class="toggle"><li><details open=""><summary>Toutes les pages : </summary><div style="display:contents" dir="ltr"><figure id="13da9883-a2b4-808d-8e56-e8ef0ef8ca0d" class="link-to-page"><a href="%F0%9F%A4%96%20Assistant%20racine/%E2%9D%84%EF%B8%8F%F0%9F%A7%B9%20Clim%20-%20Entretien%20(splits)%2013da9883a2b4808d8e56e8ef0ef8ca0d.html">❄️🧹 Clim - Entretien (splits)</a></figure></div><div style="display:contents" dir="ltr"><figure id="150a9883-a2b4-8046-b2e0-e0bc12fd45a0" class="link-to-page"><a href="%F0%9F%A4%96%20Assistant%20racine/%E2%9D%84%EF%B8%8F%F0%9F%A7%B9%20Clim%20-%20Entretien%20(splits%20+%20hauteur)%20150a9883a2b48046b2e0e0bc12fd45a0.html">❄️🧹 Clim - Entretien (splits + hauteur)</a></figure></div><div style="display:contents" dir="ltr"><figure id="149a9883-a2b4-8093-a814-dac53d439ef2" class="link-to-page"><a href="%F0%9F%A4%96%20Assistant%20racine/%E2%9D%84%EF%B8%8F%F0%9F%A7%B9%20Clim%20-%20Entretien%20(gainable)%20149a9883a2b48093a814dac53d439ef2.html">❄️🧹 Clim - Entretien (gainable)</a></figure></div><div style="display:contents" dir="ltr"><figure id="150a9883-a2b4-8026-91e1-da20e58f6d30" class="link-to-page"><a href="%F0%9F%A4%96%20Assistant%20racine/%E2%9D%84%EF%B8%8F%F0%9F%A7%B9%20Clim%20-%20Entretien%20(gainable%20+%20hauteur)%20150a9883a2b4802691e1da20e58f6d30.html">❄️🧹 Clim - Entretien (gainable + hauteur)</a></figure></div></details></li></ul></div><div style="display:contents" dir="auto"><p id="149a9883-a2b4-80b9-bfc8-f719e276fd92" class="">
 </p></div><div style="display:contents" dir="ltr"><figure id="127a9883-a2b4-807a-802e-f9081e4953b2" class="link-to-page"><a href="%F0%9F%A4%96%20Assistant%20racine/%F0%9F%9A%BD%F0%9F%A7%B2%20Remplacement%20Abattant%20WC%20127a9883a2b4807a802ef9081e4953b2.html">🚽🧲 Remplacement Abattant WC</a></figure></div><div style="display:contents" dir="ltr"><figure id="141a9883-a2b4-8094-b168-c10c17d02bb1" class="link-to-page"><a href="%F0%9F%A4%96%20Assistant%20racine/%E2%9A%97%EF%B8%8F%F0%9F%8E%9A%20BEC%20-%20Remp%20Contacteur%20Jour%20Nuit%20141a9883a2b48094b168c10c17d02bb1.html">⚗️🎚 BEC - Remp. Contacteur Jour/Nuit</a></figure></div><div style="display:contents" dir="auto"><p id="0ffa9883-a2b4-806d-9601-c0dd6236d35a" class="">Réparation / Dépannage</p></div><div style="display:contents" dir="ltr"><figure id="c6c96313-447a-4fed-ba46-54e8c69b3239" class="link-to-page"><a href="%F0%9F%A4%96%20Assistant%20racine/%F0%9F%9A%BD%20WC%20c6c96313447a4fedba4654e8c69b3239.html"><img class="icon notion-static-icon" src="https://www.notion.so/icons/playback-fast-forward_blue.svg"/>🚽 WC</a></figure></div><div style="display:contents" dir="ltr"><figure id="10ca9883-a2b4-80b3-8479-d20cb8cb626c" class="link-to-page"><a href="%F0%9F%A4%96%20Assistant%20racine/%F0%9F%A7%8A%20Pas%20d%E2%80%99eau%20chaude%2010ca9883a2b480b38479d20cb8cb626c.html"><img class="icon notion-static-icon" src="https://www.notion.so/icons/playback-fast-forward_blue.svg"/>🧊 Pas d’eau chaude</a></figure></div></details></li></ul></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
