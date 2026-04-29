@@ -1,4 +1,4 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>FORFAIT TEST</title><style>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><button style="margin-bottom:20px" onclick="window.history.back();">retour</button><title>FORFAIT TEST</title><style>
 /* cspell:disable-file */
 /* webkit printing magic: print all background colors */
 html {
@@ -740,6 +740,47 @@ blockquote.quote-large {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="34ea9883-a2b4-803d-a32a-d87126512988" class="page sans"><header><h1 class="page-title" dir="auto">FORFAIT TEST</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><h3 id="34ea9883-a2b4-80cf-b1b6-eee93899b6b5" class=""><mark class="highlight-blue"><mark class="highlight-blue_background"><strong>[ + </strong></mark></mark><a href="https://www.jotform.com/242883116329359?diagnosis=FXXX_FORAIT_TEST">FORFAIT TEST</a><mark class="highlight-blue"><mark class="highlight-blue_background"> ]</mark></mark></h3></div><div style="display:contents" dir="auto"><p id="34ea9883-a2b4-8004-be61-e5e5f54eceb3" class=""><mark class="highlight-default_background">   </mark></p></div><div style="display:contents" dir="auto"><p id="34ea9883-a2b4-80c7-bd74-db4079622082" class="">
+</style></head><body><article id="34ea9883-a2b4-803d-a32a-d87126512988" class="page sans"><header><h1 class="page-title" dir="auto">FORFAIT TEST</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><h3 id="34ea9883-a2b4-80cf-b1b6-eee93899b6b5" class=""><mark class="highlight-blue"><mark class="highlight-blue_background"><strong>[ + </strong></mark></mark><a href="https://www.jotform.com/242883116329359?diagnosis=FXXX_FORAIT_TEST">FORFAIT TEST</a><mark class="highlight-blue"><mark class="highlight-blue_background"> ]</mark></mark></h3></div><div style="display:contents" dir="auto"><p id="34ea9883-a2b4-8004-be61-e5e5f54eceb3" class=""><mark class="highlight-default_background">   </mark></p></div><div style="display:contents" dir="auto"><p id="34ea9883-a2b4-80c7-bd74-db4079622082" class=""><script>
+        // Wait for the DOM to fully load
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the current URL
+            const url = window.location.href;
+            
+            // Create a URLSearchParams object from the current URL
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // Access specific parameters
+            const paramCc = urlParams.get('cc'); // Replace 'name' with your parameter key
+            const paramMissionId = urlParams.get('missionId'); // Replace 'age' with your parameter key
+            const paramRestApiHost = urlParams.get('rest_api_host');
+            const paramGraphqlApiHost = urlParams.get('graphql_api_host');
+
+            // Example: display these parameters
+            console.log("cc:", paramCc);
+            console.log("missionId:", paramMissionId);
+
+
+            function addParams(url, params) {
+                let newUrl = new URL(url, window.location.origin);
+                for (const key in params) {
+                    newUrl.searchParams.set(key, params[key]);
+                }
+                return newUrl;
+            }
+
+            // Parameters to add
+            const paramsToAdd = { 'missionId': paramMissionId, 'cc': paramCc, 'rest_api_host': paramRestApiHost, 'graphql_api_host': paramGraphqlApiHost };
+
+            // Select all anchor tags
+            const links = document.querySelectorAll('a');
+
+            // Iterate through each link and modify its href attribute
+            links.forEach(link => {
+                link.href = addParams(link.href, paramsToAdd);
+            });
+
+        });
+    </script>
+
 </p></div><div style="display:contents" dir="auto"><p id="34ea9883-a2b4-8023-a84c-cd8cee0d4b83" class="">
 </p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
