@@ -86,6 +86,9 @@ h3 {
 .callout {
 	border-radius: 10px;
 	padding: 1rem;
+	/* Paint a complete callout box on every PDF page fragment. */
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
 }
 
 /* For default-background callouts, render the border outline. */
