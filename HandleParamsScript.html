@@ -1,9 +1,10 @@
+<!-- selfcity:handle-params:start -->
 <script>
         // Wait for the DOM to fully load
         document.addEventListener("DOMContentLoaded", function() {
             // Get the current URL
             const url = window.location.href;
-            
+
             // Create a URLSearchParams object from the current URL
             const urlParams = new URLSearchParams(window.location.search);
 
@@ -39,5 +40,72 @@
 
         });
     </script>
+<script>
+        // Les pages n8n ne peuvent pas s'ouvrir dans l'iframe de Belett : n8n Cloud répond
+        // X-Frame-Options: SAMEORIGIN. Un lien vers un webhook n8n est donc appelé en fetch,
+        // et la page qu'il renvoie s'affiche par-dessus l'assistant.
+        document.addEventListener("DOMContentLoaded", function() {
+            const N8N_WEBHOOK = "https://selfcity.app.n8n.cloud/webhook/";
+            let lastUrl = null;
+            let pending = false;
 
+            function message(text) {
+                return '<p style="font-family:system-ui,sans-serif;color:#4a3557;text-align:center;margin-top:40vh">' + text + '</p>';
+            }
 
+            function frame() {
+                let overlay = document.getElementById("n8n-overlay");
+                if (!overlay) {
+                    overlay = document.createElement("div");
+                    overlay.id = "n8n-overlay";
+                    overlay.style.cssText = "position:fixed;inset:0;z-index:2147483647;display:flex;flex-direction:column;background:#f2f2f9";
+                    overlay.innerHTML =
+                        '<button type="button" style="align-self:flex-start;margin:12px;padding:8px 14px;border:1px solid #ddd8e3;border-radius:10px;background:#fff;color:#4a3557;font:500 14px system-ui,-apple-system,sans-serif;cursor:pointer">← Retour à l’assistant</button>' +
+                        // Isolée : la page reçue ne peut toucher ni à l'assistant ni à Belett.
+                        '<iframe title="Réponse de n8n" sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox" allow="clipboard-write" style="flex:1;width:100%;border:0"></iframe>';
+                    overlay.querySelector("button").addEventListener("click", function() {
+                        overlay.remove();
+                    });
+                    document.body.appendChild(overlay);
+                }
+                return overlay.querySelector("iframe");
+            }
+
+            function show(html) {
+                frame().srcdoc = html;
+            }
+
+            async function call(url) {
+                // Un second clic pendant l'appel enverrait un second SMS.
+                if (pending) return;
+                pending = true;
+                lastUrl = url;
+                show(message("Envoi en cours…"));
+                try {
+                    // Les échecs (400, 422, 502) renvoient eux aussi une page HTML.
+                    const response = await fetch(url);
+                    show(await response.text());
+                } catch (error) {
+                    show(message("Impossible de joindre n8n. Vérifiez la connexion, puis réessayez."));
+                } finally {
+                    pending = false;
+                }
+            }
+
+            // Lu au moment du clic : le lien porte déjà missionId, ajouté par le script ci-dessus.
+            document.addEventListener("click", function(event) {
+                const link = event.target.closest('a[href^="' + N8N_WEBHOOK + '"]');
+                if (!link) return;
+                event.preventDefault();
+                call(link.href);
+            });
+
+            // Le bouton « Réessayer » d'une page du workflow demande de relancer l'appel.
+            window.addEventListener("message", function(event) {
+                const overlayFrame = document.querySelector("#n8n-overlay iframe");
+                if (!overlayFrame || event.source !== overlayFrame.contentWindow) return;
+                if (event.data === "selfcity:retry" && lastUrl) call(lastUrl);
+            });
+        });
+    </script>
+<!-- selfcity:handle-params:end -->

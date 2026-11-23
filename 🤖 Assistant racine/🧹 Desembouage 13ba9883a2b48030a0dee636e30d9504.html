@@ -794,12 +794,14 @@ blockquote.quote-large {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style><style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style></head><body><article id="13ba9883-a2b4-8030-a0de-e636e30d9504" class="page sans"><header><h1 class="page-title" dir="auto">🧹 Desembouage </h1><p class="page-description" dir="auto"></p></header><div class="page-body"><p id="f3da1692-0332-4004-b1c8-41f9ed48909b" class="" dir="auto"><mark class="highlight-gray" data-notion-highlight="gray"><mark class="highlight-gray_background" data-notion-highlight="gray_background">(Code F407)</mark></mark></p><h3 id="141a9883-a2b4-8023-8320-c9c19932cf8b" class="" dir="auto"><mark class="highlight-blue" data-notion-highlight="blue"><mark class="highlight-blue_background" data-notion-highlight="blue_background"><strong>[ + </strong></mark></mark><mark class="highlight-blue" data-notion-highlight="blue"><mark class="highlight-blue_background" data-notion-highlight="blue_background"><a href="https://form.jotform.com/243105122504339">FORFAIT - Désembouage</a></mark></mark><mark class="highlight-blue" data-notion-highlight="blue"><mark class="highlight-blue_background" data-notion-highlight="blue_background"><strong> ]</strong></mark></mark></h3><p id="96142e08-ae46-41d7-9b1f-5590de04ce47" class="" dir="auto"><mark class="highlight-default" data-notion-highlight="default"><mark class="highlight-gray_background" data-notion-highlight="gray_background">Forfait de base - 3 radiateurs max</mark></mark><mark class="highlight-default" data-notion-highlight="default"><mark class="highlight-default_background" data-notion-highlight="default_background"> </mark></mark><div class="indented"><p id="1e4536b6-aafa-4e6a-ac07-9f897f318cd9" class="" dir="auto"><mark class="highlight-default" data-notion-highlight="default"><mark class="highlight-default_background" data-notion-highlight="default_background"><strong>Z1</strong></mark></mark><mark class="highlight-default" data-notion-highlight="default"><mark class="highlight-default_background" data-notion-highlight="default_background"> : 360€   -   Z</mark></mark><mark class="highlight-default" data-notion-highlight="default"><mark class="highlight-default_background" data-notion-highlight="default_background"><strong>2</strong></mark></mark><mark class="highlight-default" data-notion-highlight="default"><mark class="highlight-default_background" data-notion-highlight="default_background"> : 389€   -   Z3 : 429€</mark></mark></p></div></p><p id="c314f82f-8d9a-4669-bf21-73935f37f1ff" class="" dir="auto"><mark class="highlight-gray_background" data-notion-highlight="gray_background">Pour chaque radiateur supplémentaire </mark><div class="indented"><p id="4393ca60-5dde-4a27-b34d-5d931ab3d308" class="" dir="auto">+45€<mark class="highlight-default" data-notion-highlight="default"><mark class="highlight-default_background" data-notion-highlight="default_background">   </mark></mark></p></div></p><p id="ead112e6-7d83-4f4e-b341-ed2b346deb02" class="" dir="auto"><script>
+</style><style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style></head><body>
+<!-- selfcity:handle-params:start -->
+<script>
         // Wait for the DOM to fully load
         document.addEventListener("DOMContentLoaded", function() {
             // Get the current URL
             const url = window.location.href;
-            
+
             // Create a URLSearchParams object from the current URL
             const urlParams = new URLSearchParams(window.location.search);
 
@@ -835,7 +837,76 @@ blockquote.quote-large {
 
         });
     </script>
+<script>
+        // Les pages n8n ne peuvent pas s'ouvrir dans l'iframe de Belett : n8n Cloud répond
+        // X-Frame-Options: SAMEORIGIN. Un lien vers un webhook n8n est donc appelé en fetch,
+        // et la page qu'il renvoie s'affiche par-dessus l'assistant.
+        document.addEventListener("DOMContentLoaded", function() {
+            const N8N_WEBHOOK = "https://selfcity.app.n8n.cloud/webhook/";
+            let lastUrl = null;
+            let pending = false;
 
+            function message(text) {
+                return '<p style="font-family:system-ui,sans-serif;color:#4a3557;text-align:center;margin-top:40vh">' + text + '</p>';
+            }
+
+            function frame() {
+                let overlay = document.getElementById("n8n-overlay");
+                if (!overlay) {
+                    overlay = document.createElement("div");
+                    overlay.id = "n8n-overlay";
+                    overlay.style.cssText = "position:fixed;inset:0;z-index:2147483647;display:flex;flex-direction:column;background:#f2f2f9";
+                    overlay.innerHTML =
+                        '<button type="button" style="align-self:flex-start;margin:12px;padding:8px 14px;border:1px solid #ddd8e3;border-radius:10px;background:#fff;color:#4a3557;font:500 14px system-ui,-apple-system,sans-serif;cursor:pointer">← Retour à l’assistant</button>' +
+                        // Isolée : la page reçue ne peut toucher ni à l'assistant ni à Belett.
+                        '<iframe title="Réponse de n8n" sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox" allow="clipboard-write" style="flex:1;width:100%;border:0"></iframe>';
+                    overlay.querySelector("button").addEventListener("click", function() {
+                        overlay.remove();
+                    });
+                    document.body.appendChild(overlay);
+                }
+                return overlay.querySelector("iframe");
+            }
+
+            function show(html) {
+                frame().srcdoc = html;
+            }
+
+            async function call(url) {
+                // Un second clic pendant l'appel enverrait un second SMS.
+                if (pending) return;
+                pending = true;
+                lastUrl = url;
+                show(message("Envoi en cours…"));
+                try {
+                    // Les échecs (400, 422, 502) renvoient eux aussi une page HTML.
+                    const response = await fetch(url);
+                    show(await response.text());
+                } catch (error) {
+                    show(message("Impossible de joindre n8n. Vérifiez la connexion, puis réessayez."));
+                } finally {
+                    pending = false;
+                }
+            }
+
+            // Lu au moment du clic : le lien porte déjà missionId, ajouté par le script ci-dessus.
+            document.addEventListener("click", function(event) {
+                const link = event.target.closest('a[href^="' + N8N_WEBHOOK + '"]');
+                if (!link) return;
+                event.preventDefault();
+                call(link.href);
+            });
+
+            // Le bouton « Réessayer » d'une page du workflow demande de relancer l'appel.
+            window.addEventListener("message", function(event) {
+                const overlayFrame = document.querySelector("#n8n-overlay iframe");
+                if (!overlayFrame || event.source !== overlayFrame.contentWindow) return;
+                if (event.data === "selfcity:retry" && lastUrl) call(lastUrl);
+            });
+        });
+    </script>
+<!-- selfcity:handle-params:end -->
+<article id="13ba9883-a2b4-8030-a0de-e636e30d9504" class="page sans"><header><h1 class="page-title" dir="auto">🧹 Desembouage </h1><p class="page-description" dir="auto"></p></header><div class="page-body"><p id="f3da1692-0332-4004-b1c8-41f9ed48909b" class="" dir="auto"><mark class="highlight-gray" data-notion-highlight="gray"><mark class="highlight-gray_background" data-notion-highlight="gray_background">(Code F407)</mark></mark></p><h3 id="141a9883-a2b4-8023-8320-c9c19932cf8b" class="" dir="auto"><mark class="highlight-blue" data-notion-highlight="blue"><mark class="highlight-blue_background" data-notion-highlight="blue_background"><strong>[ + </strong></mark></mark><mark class="highlight-blue" data-notion-highlight="blue"><mark class="highlight-blue_background" data-notion-highlight="blue_background"><a href="https://form.jotform.com/243105122504339">FORFAIT - Désembouage</a></mark></mark><mark class="highlight-blue" data-notion-highlight="blue"><mark class="highlight-blue_background" data-notion-highlight="blue_background"><strong> ]</strong></mark></mark></h3><p id="96142e08-ae46-41d7-9b1f-5590de04ce47" class="" dir="auto"><mark class="highlight-default" data-notion-highlight="default"><mark class="highlight-gray_background" data-notion-highlight="gray_background">Forfait de base - 3 radiateurs max</mark></mark><mark class="highlight-default" data-notion-highlight="default"><mark class="highlight-default_background" data-notion-highlight="default_background"> </mark></mark><div class="indented"><p id="1e4536b6-aafa-4e6a-ac07-9f897f318cd9" class="" dir="auto"><mark class="highlight-default" data-notion-highlight="default"><mark class="highlight-default_background" data-notion-highlight="default_background"><strong>Z1</strong></mark></mark><mark class="highlight-default" data-notion-highlight="default"><mark class="highlight-default_background" data-notion-highlight="default_background"> : 360€   -   Z</mark></mark><mark class="highlight-default" data-notion-highlight="default"><mark class="highlight-default_background" data-notion-highlight="default_background"><strong>2</strong></mark></mark><mark class="highlight-default" data-notion-highlight="default"><mark class="highlight-default_background" data-notion-highlight="default_background"> : 389€   -   Z3 : 429€</mark></mark></p></div></p><p id="c314f82f-8d9a-4669-bf21-73935f37f1ff" class="" dir="auto"><mark class="highlight-gray_background" data-notion-highlight="gray_background">Pour chaque radiateur supplémentaire </mark><div class="indented"><p id="4393ca60-5dde-4a27-b34d-5d931ab3d308" class="" dir="auto">+45€<mark class="highlight-default" data-notion-highlight="default"><mark class="highlight-default_background" data-notion-highlight="default_background">   </mark></mark></p></div></p><p id="ead112e6-7d83-4f4e-b341-ed2b346deb02" class="" dir="auto">
 </p><p id="542d307e-6e39-4d1c-9b5f-8b5c280cd4ea" class="" dir="auto">
 </p><p id="527a4c56-9372-427b-b7b3-8cb27d72b24b" class="" dir="auto">
 </p><p id="b0d7985c-6517-4aaa-9020-df896c5d2f2b" class="" dir="auto">

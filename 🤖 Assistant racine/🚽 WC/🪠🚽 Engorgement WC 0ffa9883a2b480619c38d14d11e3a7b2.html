@@ -794,12 +794,14 @@ blockquote.quote-large {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style><style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style></head><body><article id="0ffa9883-a2b4-8061-9c38-d14d11e3a7b2" class="page sans" data-notion-page-icon="/icons/playback-fast-forward_blue.svg"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/playback-fast-forward_blue.svg"/></div><h1 class="page-title" dir="auto">🪠🚽 Engorgement WC</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><p id="118b122a-510f-402b-9dad-c55ae5b6c9fe" class="" dir="auto"><script>
+</style><style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style></head><body>
+<!-- selfcity:handle-params:start -->
+<script>
         // Wait for the DOM to fully load
         document.addEventListener("DOMContentLoaded", function() {
             // Get the current URL
             const url = window.location.href;
-            
+
             // Create a URLSearchParams object from the current URL
             const urlParams = new URLSearchParams(window.location.search);
 
@@ -835,5 +837,74 @@ blockquote.quote-large {
 
         });
     </script>
+<script>
+        // Les pages n8n ne peuvent pas s'ouvrir dans l'iframe de Belett : n8n Cloud répond
+        // X-Frame-Options: SAMEORIGIN. Un lien vers un webhook n8n est donc appelé en fetch,
+        // et la page qu'il renvoie s'affiche par-dessus l'assistant.
+        document.addEventListener("DOMContentLoaded", function() {
+            const N8N_WEBHOOK = "https://selfcity.app.n8n.cloud/webhook/";
+            let lastUrl = null;
+            let pending = false;
 
+            function message(text) {
+                return '<p style="font-family:system-ui,sans-serif;color:#4a3557;text-align:center;margin-top:40vh">' + text + '</p>';
+            }
+
+            function frame() {
+                let overlay = document.getElementById("n8n-overlay");
+                if (!overlay) {
+                    overlay = document.createElement("div");
+                    overlay.id = "n8n-overlay";
+                    overlay.style.cssText = "position:fixed;inset:0;z-index:2147483647;display:flex;flex-direction:column;background:#f2f2f9";
+                    overlay.innerHTML =
+                        '<button type="button" style="align-self:flex-start;margin:12px;padding:8px 14px;border:1px solid #ddd8e3;border-radius:10px;background:#fff;color:#4a3557;font:500 14px system-ui,-apple-system,sans-serif;cursor:pointer">← Retour à l’assistant</button>' +
+                        // Isolée : la page reçue ne peut toucher ni à l'assistant ni à Belett.
+                        '<iframe title="Réponse de n8n" sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox" allow="clipboard-write" style="flex:1;width:100%;border:0"></iframe>';
+                    overlay.querySelector("button").addEventListener("click", function() {
+                        overlay.remove();
+                    });
+                    document.body.appendChild(overlay);
+                }
+                return overlay.querySelector("iframe");
+            }
+
+            function show(html) {
+                frame().srcdoc = html;
+            }
+
+            async function call(url) {
+                // Un second clic pendant l'appel enverrait un second SMS.
+                if (pending) return;
+                pending = true;
+                lastUrl = url;
+                show(message("Envoi en cours…"));
+                try {
+                    // Les échecs (400, 422, 502) renvoient eux aussi une page HTML.
+                    const response = await fetch(url);
+                    show(await response.text());
+                } catch (error) {
+                    show(message("Impossible de joindre n8n. Vérifiez la connexion, puis réessayez."));
+                } finally {
+                    pending = false;
+                }
+            }
+
+            // Lu au moment du clic : le lien porte déjà missionId, ajouté par le script ci-dessus.
+            document.addEventListener("click", function(event) {
+                const link = event.target.closest('a[href^="' + N8N_WEBHOOK + '"]');
+                if (!link) return;
+                event.preventDefault();
+                call(link.href);
+            });
+
+            // Le bouton « Réessayer » d'une page du workflow demande de relancer l'appel.
+            window.addEventListener("message", function(event) {
+                const overlayFrame = document.querySelector("#n8n-overlay iframe");
+                if (!overlayFrame || event.source !== overlayFrame.contentWindow) return;
+                if (event.data === "selfcity:retry" && lastUrl) call(lastUrl);
+            });
+        });
+    </script>
+<!-- selfcity:handle-params:end -->
+<article id="0ffa9883-a2b4-8061-9c38-d14d11e3a7b2" class="page sans" data-notion-page-icon="/icons/playback-fast-forward_blue.svg"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/playback-fast-forward_blue.svg"/></div><h1 class="page-title" dir="auto">🪠🚽 Engorgement WC</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><p id="118b122a-510f-402b-9dad-c55ae5b6c9fe" class="" dir="auto">
 </p><h3 id="609efea2-77c1-45c1-828a-e5be1b0800c8" class="" dir="auto"><mark class="highlight-blue_background" data-notion-highlight="blue_background">Votre WC possède-t-il un sanibroyeur  ?</mark></h3><p id="485c347e-0621-4803-ab1d-fd5a8e7a17c2" class="" dir="auto"><div class="indented"><h3 id="6f15b4bb-19bd-43b7-a36a-23918082acac" class="" dir="auto"><mark class="highlight-teal_background" data-notion-highlight="teal_background">Oui</mark></h3><figure id="0ffa9883-a2b4-800e-bf79-e1b167e6355f" class="link-to-page"><a href="%F0%9F%AA%A0%F0%9F%9A%BD%20Engorgement%20WC/%F0%9F%AA%A0%F0%9F%9A%BD%E2%9A%99%EF%B8%8F%20Engorgement%20WC%20sanibroyeur%200ffa9883a2b4800ebf79e1b167e6355f.html" data-notion-page-id="0ffa9883-a2b4-800e-bf79-e1b167e6355f" data-notion-space-id="8d81cb35-aeb3-4517-9cc3-f4b48f4e7d3f"><img class="icon notion-static-icon" src="https://app.notion.com/icons/playback-fast-forward_blue.svg"/>🪠🚽⚙️ Engorgement WC sanibroyeur</a></figure></div></p><p id="100a9883-a2b4-80e1-b954-f524b2aa02f5" class="" dir="auto"><div class="indented"><h3 id="100a9883-a2b4-80e2-b67d-ec1b753a6740" class="" dir="auto"><mark class="highlight-teal_background" data-notion-highlight="teal_background">Non</mark></h3><figure id="eae20111-80e1-4215-8f0b-f618866dc6b5" class="link-to-page"><a href="../%F0%9F%9A%BD%F0%9F%AA%A0%20Debouchage%20WC%20classique%20eae2011180e142158f0bf618866dc6b5.html" data-notion-page-id="eae20111-80e1-4215-8f0b-f618866dc6b5" data-notion-space-id="8d81cb35-aeb3-4517-9cc3-f4b48f4e7d3f">🚽🪠 Debouchage WC classique</a></figure></div></p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
